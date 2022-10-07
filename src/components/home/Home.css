@@ -1,0 +1,107 @@
+.Home {
+    height: 100vh;
+    margin-top: -15vh;
+}
+
+.first-avatar img {
+    height: 55vh;
+}
+
+
+
+#img-objects {
+    height: 60vh;
+    animation: turn1 10s linear infinite!important;
+}
+
+@keyframes turn1 {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+
+input {
+    outline: none;
+}
+
+.noe-img img {
+    width: 4rem;
+    transition: width 0.5s ease-in-out;
+}
+
+
+.noe-img:hover img{
+    position:fixed;
+    border-radius: 50%;
+    width: 11rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.name {
+    gap: 10px;
+}
+
+
+.objeto {
+    z-index: -1;
+    overflow: hidden;
+    height: 60vh;
+    transition: all .02s ease-in-out;
+}
+
+@media screen and (max-width:1030px) {
+    .Home {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+    }
+    
+    .left {
+        width: 100%;
+        height: 100vh;
+        align-items: stretch;
+        margin: auto;
+        display: flex;
+        top: auto;
+        bottom: auto;
+        align-content: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .right {
+        overflow-y: hidden;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+    }
+    
+    .avatar {
+        height: 100vh;
+    }
+    .noe-img:hover img{
+        position:relative;
+        border-radius: 1.5rem;
+        width: 4rem;
+    }
+    
+}
+
+
+@media screen and (max-width:660px) {
+    .Home h1 {
+        font-size: 2.5rem;
+    }
+    .dialog {
+        flex-wrap: wrap;
+    }
+    .name {
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width:630px) {
+    h1 {
+        line-height: 40px;
+    }
+}
