@@ -20,3 +20,17 @@ section {
   max-width: 80vw;
   margin: auto;
 }
+
+body::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ccced5;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #112130;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */ /* creates padding around scroll thumb */
+}

@@ -1,0 +1,12 @@
+.Portfolio {
+    flex-direction: column;
+}
+
+.my-portfolio {
+    flex-direction: column;
+}
+
+.titles {
+    height: 10vh;
+    margin: 40px;
+}

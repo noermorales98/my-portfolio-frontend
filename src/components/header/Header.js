@@ -1,12 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 import './Header.css';
 import logo from "../img/logo.png";
 import menu from './menu.svg';
 import close from './close.svg';
 
 function Header() {
+  
+  const [color, setColor] = useState(false);
+  const changeColor = () => {
+    if(window.scrollY >= 90){
+      setColor(true);
+    }
+    else{
+      setColor(false);
+    }
+  }
+  
+  window.addEventListener('scroll', changeColor);
     return (
-        <nav className="Header nav container sticky top-0" id="nav">
+        <nav className={color ? 'Header nav container container-bg nav-padding sticky top-0' : 'Header nav container sticky top-0'} id="nav">
         <a href="/" className="nav__logo">
           <img className="logo" src={logo} alt="logo" />
         </a>
