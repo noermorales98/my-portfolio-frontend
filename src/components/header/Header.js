@@ -8,7 +8,7 @@ function Header() {
   
   const [color, setColor] = useState(false);
   const changeColor = () => {
-    if(window.scrollY >= 90){
+    if(window.scrollY >=40){
       setColor(true);
     }
     else{
@@ -20,14 +20,14 @@ function Header() {
     return (
         <nav className={color ? 'Header nav container container-bg nav-padding sticky top-0' : 'Header nav container sticky top-0'} id="nav">
         <a href="/" className="nav__logo">
-          <img className="logo" src={logo} alt="logo" />
+          <h1><span className="font-thin">Noelí</span> Rodríguez</h1>
         </a>
         <ul className="nav__links">
           <li className="nav__item">
-            <a href="/" className="nav__link">Inicio</a>
+            <a href="#home" className="nav__link">Inicio</a>
           </li>
           <li className="nav__item">
-            <a href="/" className="nav__link">Blog</a>
+            <a href="#portfolio" className="nav__link">Portfolio</a>
           </li>
           <li className="nav__item">
             <a href="/" className="nav__link">Acerca de</a>
@@ -39,7 +39,7 @@ function Header() {
         <a href="#nav" className="nav__hamburguer">
           <img src={menu} className="nav__icon" alt="menu" />
         </a>
-        <a href="#" className="nav__close z-10">
+        <a href="#menu" className="nav__close z-10">
           <img src={close} className="nav__icon" alt="menu" />
         </a>
       </nav>

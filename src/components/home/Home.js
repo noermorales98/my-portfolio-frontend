@@ -7,7 +7,7 @@ import objetos from './objects.png';
 
 function Home() {
     return (
-        <section className="Home flex items-center overflow-x-hidden">
+        <section className="Home flex items-center overflow-x-hidden" id="home">
             <div className="left w-1/2 items-center">
                 <div className="dialog gap-1 text-6xl items-center flex whitespace-nowrap font-semibold">
                     <h1>Hello, </h1>

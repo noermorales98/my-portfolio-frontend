@@ -9,15 +9,16 @@
     width: 100%;
     max-width: 100vw;
     overflow: hidden;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 .container-bg {
     background-color: white;
+    border-bottom: 1px solid #ebecef;
 }
 
 .nav-padding {
-    padding: 20px 10vw!important;
+    padding: 10px 10vw!important;
 }
 
 
@@ -26,7 +27,7 @@
     --state-hamburguer:scale(1);
     --state-menu: translate(100%);
 
-    padding: 40px 10vw;
+    padding: 20px 10vw;
     display: grid;
     justify-content: space-between;
     align-items: center;
@@ -40,7 +41,7 @@
 }
 
 .nav__logo{
-    font-size: 2.5rem;
+    font-size: 2rem;
     z-index: 1;
 }
 
