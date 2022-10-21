@@ -19,7 +19,9 @@
 }
 
 .card {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     box-shadow: inset -1px 1px 1px 0px #ffffff4d;
     background: linear-gradient(52deg, rgb(255 254 254 / 59%) 0%, rgb(255 255 255 / 7%) 100%);
     -webkit-backdrop-filter: blur(24px);

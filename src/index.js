@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
 import Portfolio from './components/portfolio/Portfolio';
+import Prueba from './components/prueba/Prueba';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
