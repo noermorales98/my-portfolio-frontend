@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-//import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
 import Portfolio from './components/portfolio/Portfolio';
-import Prueba from './components/prueba/Prueba';
-
+import About from './components/about/About';
+import Contact from './components/contact/Contact';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +14,8 @@ root.render(
       <Header />
       <Home />
       <Portfolio/>
+      <About/>
+      <Contact/>
   </React.StrictMode>
 );
 

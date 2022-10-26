@@ -30,10 +30,10 @@ function Header() {
             <a href="#portfolio" className="nav__link">Portfolio</a>
           </li>
           <li className="nav__item">
-            <a href="/" className="nav__link">Acerca de</a>
+            <a href="#aboutme" className="nav__link">Acerca de</a>
           </li>
           <li className="nav__item">
-            <a href="/" className="nav__link">Contacto</a>
+            <a href="#contactme" className="nav__link">Contacto</a>
           </li>
         </ul>
         <a href="#nav" className="nav__hamburguer">

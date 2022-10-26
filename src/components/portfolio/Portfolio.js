@@ -41,20 +41,20 @@ function Portfolio() {
                 <div className="projects px-10">
                     <div className=" grid gap-3 grid-cols-3 ">
 
-                        {dato.map((item, index)=>(
+                        {dato.map((item, index) => (
                             <a key={index} href={item.url} target="_blank" className="max-w-sm rounded-3xl p-4 transition-all overflow-hidden card roboto">
-                            <div className="px-6 py-4">
-                                <div className="font-bold text-2xl text-white mb-2">{item.name}</div>
-                                <p className="text-white font-light text-sm">
-                                    {item.description}
-                                </p>
-                            </div>
-                            <div className="px-6 pt-4 pb-2">
-                                <span className="inline-block bg-[#ffffffad] rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2">{item.topics[0]}</span>
-                                <span className="inline-block bg-[#ffffffad] rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2">{item.topics[1]}</span>
-                                <span className="inline-block bg-[#ffffffad] rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2">{item.topics[2]}</span>
-                            </div>
-                        </a>
+                                <div className="px-6 py-4">
+                                    <div className="font-bold text-2xl text-white mb-2">{item.name}</div>
+                                    <p className="text-white font-light text-sm">
+                                        {item.description}
+                                    </p>
+                                </div>
+                                <div className="px-6 pt-4 pb-2">
+                                    <span className="inline-block bg-[#ffffffad] rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2">{item.topics[0]}</span>
+                                    <span className="inline-block bg-[#ffffffad] rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2">{item.topics[1]}</span>
+                                    <span className="inline-block bg-[#ffffffad] rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2">{item.topics[2]}</span>
+                                </div>
+                            </a>
                         ))}
                     </div>
                 </div>

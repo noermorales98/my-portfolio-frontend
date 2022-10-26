@@ -23,8 +23,7 @@ function Home() {
                     <h1>I am a front-end software developer</h1>
                 </div>
                 <div className="btn-home flex gap-4 my-4 w-full">
-                    <input className="py-4 px-8 rounded-xl bg-slate-200 w-9/12 flex justify-center" type="email" placeholder="Insert your email"></input>
-                    <button className=" bg-[#112130] hover:bg-[#88aac3] active:bg-[#171930] focus:outline-none focus:ring focus:ring-[#e2e8f0] text-white rounded-xl py-4 px-8 w-3/12 flex justify-center">Let's Go</button>
+                    <a href="https://wa.me/529981725547" target="_blank" className=" bg-[#112130] hover:bg-[#88aac3] active:bg-[#171930] focus:outline-none focus:ring focus:ring-[#e2e8f0] text-white rounded-xl py-4 px-8 w-3/12 flex justify-center">Contact me</a>
                 </div>
             </div>
             <div className="right w-1/2 items-center flex justify-center">
