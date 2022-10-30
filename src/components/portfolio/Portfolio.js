@@ -40,7 +40,6 @@ function Portfolio() {
                 </div>
                 <div className="projects px-10">
                     <div className=" grid gap-3 grid-cols-3 ">
-
                         {dato.map((item, index) => (
                             <a key={index} href={item.url} target="_blank" className="max-w-sm rounded-3xl p-4 transition-all overflow-hidden card roboto">
                                 <div className="px-6 py-4">

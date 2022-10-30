@@ -20,11 +20,11 @@ function About() {
     React.useEffect(() => {
         fetchData();
     }, []);
+    
+    
     return (
         <div className="About flex justify-center items-center " id="aboutme">
-            {dato.map((item, index)=>(
-                <h1 className="text-6xl w-4/5" key={index}>{item.aboutme}</h1>
-            ))}
+            <h1 className="text-6xl w-4/5">{dato[0]?.aboutme}</h1>
         </div>
     );
 }

@@ -2,10 +2,17 @@
     height: 100vh;
     margin-top: -15vh;
     margin-bottom: 20vh;
+    /* flex-direction: column-reverse!important; */
 }
 
 .first-avatar img {
     height: 55vh;
+}
+
+.first-avatar {
+    margin: auto;
+    height: 100%;
+    align-items: center;
 }
 
 
