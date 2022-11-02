@@ -1,12 +1,11 @@
 import React from "react";
+import "./Admin.css";
 
 function Admin() {
     return (
-          
-        <div className="Admin flex justify-center items-center" id="admin">
-            <a href="/">
-                Hola</a>
-        </div>
+       <div className="Admin flex items-center justify-center">
+        <h1>Settings</h1>
+       </div>
     )
 }
 

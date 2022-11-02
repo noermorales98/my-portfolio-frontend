@@ -13,9 +13,6 @@ function Home() {
                     <h1>Hello, </h1>
                     <span className="name flex items-center">
                         <h1>I'm</h1>
-                        <span className="noe-img w-16 h-16">
-                        <img className="noe w-16 rounded-3xl aspect-square items-center" src={noe} alt="imagen" />
-                        </span>
                         <h1>Noelí</h1>
                         </span>
                 </div>
