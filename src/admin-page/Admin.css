@@ -1,3 +1,21 @@
+
+:root {
+    --main-color: #fff;
+}
+
 .Admin {
     min-height: 100vh;
+}
+
+
+.bg-main-color {
+    background-color: var(--main-color);
+}
+
+.text-main-color {
+    color: var(--main-color);
+}
+
+.border-main-color {
+    border-color: var(--main-color);
 }
