@@ -1,8 +1,52 @@
-import { data } from "autoprefixer";
+import { render } from "@testing-library/react";
 import React from "react";
 import "./Admin.css";
 
-function Admin() {
+
+async function sendDatos(datos) {
+    return fetch('http://localhost:3001/info/update', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datos)
+    })
+        .then(data => data.json())
+}
+
+async function saveDatos(repo) {
+    if (repo === "") {
+        alert("No se puede guardar un repositorio vacio")
+    } else {
+
+        fetch('http://localhost:3001/repositorios/eliminar', {
+            method: 'DELETE',
+        }).then(console.log("Eliminado"))
+
+        return fetch(`http://localhost:3001/repositorios/guardar/${repo}`, {
+            method: 'POST',
+        }).then(console.log("Guardado"))
+    }
+}
+
+async function deleteDatos() {
+    return fetch('http://localhost:3001/repositorios/eliminar', {
+        method: 'DELETE',
+    }).then(console.log("Eliminado"))
+}
+
+
+function Admin({ setInfo }) {
+
+    const [username, setUserName] = React.useState();
+    const [lastname, setLastname] = React.useState();
+    const [email, setEmail] = React.useState();
+    const [aboutme, setAboutme] = React.useState();
+    const [usergithub, setUsergithub] = React.useState();
+    const [phone, setPhone] = React.useState();
+    const [knowledges, setKnowledges] = React.useState();
+    const [job, setJob] = React.useState();
+
     //informacion
     const [dato, setDato] = React.useState([]);
 
@@ -30,24 +74,38 @@ function Admin() {
         fetchData();
     }, []);
 
-    return (
 
-        <form>
+
+    //boton enviar
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const info = await sendDatos({
+            username,
+            lastname,
+            job,
+            aboutme,
+            knowledges,
+            email,
+            phone,
+            usergithub
+        });
+        sendDatos(info);
+        //deleteDatos();
+        saveDatos(usergithub);
+    }
+
+    return (
+        
+        <form onSubmit={handleSubmit}>
             <div className="bg-gray-100">
                 <div className="w-full text-black bg-main-color">
-                    <div className="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+                    <div className="flex justify-between flex-row max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
                         <div className="p-4 flex flex-row items-center justify-between">
                             <a href="/" className="text-lg font-semibold tracking-widest uppercase rounded-lg focus:outline-none focus:shadow-outline">{dato[0]?.username} {dato[0]?.lastname}</a>
-                            <button className="md:hidden rounded-lg focus:outline-none focus:shadow-outline">
-                                <svg fill="currentColor" viewBox="0 0 20 20" className="w-6 h-6">
-                                    <path x-show="!open" fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clipRule="evenodd" />
-                                    <path x-show="open" fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                                </svg>
-                            </button>
                         </div>
-                        <nav className="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+                        <nav className="flex-col pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
                             <div className="relative" >
-                                <button className="bg-cyan-700 px-6 exit flex text-white focus:text-white flex-row rounded-full items-center space-x-2 w-full py-2 mt-2 text-sm font-semibold text-left bg-transparent hover:bg-cyan-900 md:w-auto md:mt-0 md:ml-4 focus:bg-[#000] focus:outline-none focus:shadow-outline">
+                                <button type="submit" className="bg-cyan-700 px-6 exit flex text-white focus:text-white flex-row rounded-full items-center space-x-2 w-full py-2 mt-2 text-sm font-semibold text-left hover:bg-cyan-900 md:w-auto md:mt-0 md:ml-4 focus:bg-[#000] focus:outline-none focus:shadow-outline">
                                     <span>Save</span>
                                 </button>
                             </div>
@@ -62,11 +120,11 @@ function Admin() {
                             {/* Profile Card */}
                             <div className="bg-white p-3 rounded-xl ">
                                 <h1 className="text-gray-900 font-bold text-xl leading-8 my-1">{dato[0]?.username} {dato[0]?.firstname}</h1>
-                                <input type="text" className="text-gray-600 font-lg text-semibold leading-6 pb-4" id="job" placeholder={dato[0]?.job} />
+                                <input type="text" className="text-gray-600 font-lg text-semibold leading-6 pb-4" id="job" placeholder={dato[0]?.job} onChange={e => setJob(e.target.value)} />
                                 <h3 className="text-gray-600 font-lg text-semibold text-sm leading-6">Email</h3>
-                                <input type="email" className="text-gray-600 font-lg text-semibold leading-6 pb-4 w-full" id="email" placeholder={dato[0]?.email} />
+                                <input type="email" className="text-gray-600 font-lg text-semibold leading-6 pb-4 w-full" id="email" placeholder={dato[0]?.email} onChange={e => setEmail(e.target.value)} />
                                 <h3 className="text-gray-600 font-lg text-semibold text-sm leading-6">Phone</h3>
-                                <input type="number" className="text-gray-600 font-lg text-semibold leading-6 pb-4 w-full" id="number" placeholder={dato[0]?.phone} />
+                                <input type="number" className="text-gray-600 font-lg text-semibold leading-6 pb-4 w-full" id="number" placeholder={dato[0]?.phone} onChange={e => setPhone(e.target.value)} />
                                 <ul className="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded-xl shadow-sm">
                                     <li className="flex items-center py-3 font-bold">
                                         <span>Skills</span>
@@ -99,21 +157,21 @@ function Admin() {
                                     <span className="tracking-wide">About me</span>
                                 </div>
                                 <div className="text-gray-700">
-                                    <textarea className="grid md:grid-cols-2 text px-4 py-2 w-1/2 resize-none h-20" placeholder={dato[0]?.aboutme}>
+                                    <textarea className="grid md:grid-cols-2 text px-4 py-2 w-1/2 resize-none h-20" placeholder={dato[0]?.aboutme} onChange={e => setAboutme(e.target.value)}>
                                     </textarea>
 
                                     <div className="grid md:grid-cols-2 text-sm">
                                         <div className="grid grid-cols-2">
                                             <div className="px-4 py-2 font-semibold">Name</div>
-                                            <input className="px-4 py-2" placeholder={dato[0]?.username}></input>
+                                            <input className="px-4 py-2" placeholder={dato[0]?.username} onChange={e => setUserName(e.target.value)}></input>
                                         </div>
                                         <div className="grid grid-cols-2">
                                             <div className="px-4 py-2 font-semibold">Last Name</div>
-                                            <input className="px-4 py-2" placeholder={dato[0]?.lastname}></input>
+                                            <input className="px-4 py-2" placeholder={dato[0]?.lastname} onChange={e => setLastname(e.target.value)}></input>
                                         </div>
                                         <div className="grid grid-cols-2">
                                             <div className="px-4 py-2 font-semibold">Username Repositories</div>
-                                            <input className="px-4 py-2" placeholder={dato[0]?.usergithub}></input>
+                                            <input className="px-4 py-2" placeholder={dato[0]?.usergithub} onChange={e => setUsergithub(e.target.value)}></input>
                                         </div>
                                     </div>
                                 </div>
