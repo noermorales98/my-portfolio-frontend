@@ -3,3 +3,9 @@
     background: #112130;
     color: white;
 }
+
+@media(max-width: 768px){
+    .contactos {
+        width: 100%;
+    }
+}

@@ -27,7 +27,7 @@ function Contact() {
             <div className="w-4/5 m-auto text-center h-full">
                 <h1 className="text-6xl">Contact me</h1>
                 <p>How can help you? I'd love to hear from you:</p>
-                <div className="flex w-3/5 m-auto">
+                <div className="flex w-3/5 m-auto contactos">
 
 
                     <div className="w-full flex flex-col gap-1 p-10">

@@ -5,3 +5,10 @@
 h3{
     font-weight: lighter!important;
 }
+
+
+@media (max-width:766px) {
+    .About h1{
+        font-size: 30px !important;
+    }
+}
