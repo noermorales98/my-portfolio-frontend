@@ -15,11 +15,21 @@
     align-items: center;
 }
 
-
+.dialog{
+    font-size: 5rem;
+}
 
 #img-objects {
-    height: 40vh;
+    height: 50vh;
     animation: turn1 10s linear infinite!important;
+}
+@media (max-width: 768px) {
+    #img-objects {
+        height: 30vh;
+    }
+    .first-avatar img {
+        height: 45vh;
+    }
 }
 
 @keyframes turn1 {

@@ -26,7 +26,7 @@ function Home() {
                     <h1>I am a {data[0]?.job}</h1>
                 </div>
                 <div className="btn-home flex gap-4 my-4 w-full">
-                    <a href={'mailto:' + data[0]?.email} target="_blank" className=" bg-[#112130] hover:bg-[#88aac3] active:bg-[#171930] focus:outline-none focus:ring focus:ring-[#e2e8f0] text-white rounded-xl py-4 px-8 w-3/12 flex justify-center whitespace-nowrap">Contact me</a>
+                    <a href={'mailto:' + data[0]?.email} target="_blank" className=" bg-[#112130] hover:bg-[#88aac3] active:bg-[#171930] focus:outline-none focus:ring focus:ring-[#e2e8f0] text-white rounded-full py-4 px-8 w-3/12 flex justify-center whitespace-nowrap">Contact me</a>
                 </div>
             </div>
             <div className="right w-1/2 items-center flex justify-center">
