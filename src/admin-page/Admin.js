@@ -18,11 +18,6 @@ async function saveDatos(repo) {
     if (repo === "") {
         alert("No se puede guardar un repositorio vacio")
     } else {
-
-        fetch('http://localhost:3001/repositorios/eliminar', {
-            method: 'DELETE',
-        }).then(console.log("Eliminado"))
-
         return fetch(`http://localhost:3001/repositorios/guardar/${repo}`, {
             method: 'POST',
         }).then(console.log("Guardado"))
@@ -89,13 +84,20 @@ function Admin({ setInfo }) {
             phone,
             usergithub
         });
+        if (usergithub != null) {
+            fetch('http://localhost:3001/repositorios/eliminar', {
+                method: 'DELETE',
+            }).then(console.log("Eliminado"))
+        }
         sendDatos(info);
         //deleteDatos();
         saveDatos(usergithub);
+        window.location.reload()
+
     }
 
     return (
-        
+
         <form onSubmit={handleSubmit}>
             <div className="bg-gray-100">
                 <div className="w-full text-black bg-main-color">
