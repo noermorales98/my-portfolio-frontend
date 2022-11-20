@@ -1,6 +1,8 @@
 import { render } from "@testing-library/react";
 import React from "react";
 import "./Admin.css";
+import save from './save.svg'
+import logo from './logo.png'
 
 
 async function sendDatos(datos) {
@@ -88,10 +90,10 @@ function Admin({ setInfo }) {
             fetch('http://localhost:3001/repositorios/eliminar', {
                 method: 'DELETE',
             }).then(console.log("Eliminado"))
+            saveDatos(usergithub);
         }
         sendDatos(info);
         //deleteDatos();
-        saveDatos(usergithub);
         window.location.reload()
 
     }
@@ -99,35 +101,24 @@ function Admin({ setInfo }) {
     return (
 
         <form onSubmit={handleSubmit}>
-            <div className="bg-gray-100">
-                <div className="w-full text-black bg-main-color">
-                    <div className="flex justify-between flex-row max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-                        <div className="p-4 flex flex-row items-center justify-between">
-                            <a href="/" className="text-lg font-semibold tracking-widest uppercase rounded-lg focus:outline-none focus:shadow-outline">{dato[0]?.username} {dato[0]?.lastname}</a>
-                        </div>
-                        <nav className="flex-col pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-                            <div className="relative" >
-                                <button type="submit" className="bg-cyan-700 px-6 exit flex text-white focus:text-white flex-row rounded-full items-center space-x-2 w-full py-2 mt-2 text-sm font-semibold text-left hover:bg-cyan-900 md:w-auto md:mt-0 md:ml-4 focus:bg-[#000] focus:outline-none focus:shadow-outline">
-                                    <span>Save</span>
-                                </button>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
+            <div className="bg-[#f4f5fe]">
                 {/* End of Navbar */}
-                <div className="container mx-auto my-5 p-5 min-h-screen">
-                    <div className="md:flex no-wrap md:-mx-2 ">
+                <div className="container mx-auto min-h-screen">
+                    <div className="md:flex no-wrap">
                         {/* Left Side */}
-                        <div className="w-full md:w-3/12 md:mx-2">
+                        <div className="w-full md:w-3/12 bg-[#ecedf6]">
                             {/* Profile Card */}
-                            <div className="bg-white p-3 rounded-xl ">
-                                <h1 className="text-gray-900 font-bold text-xl leading-8 my-1">{dato[0]?.username} {dato[0]?.firstname}</h1>
+                            <div className="bg-[#ecedf6] p-8 h-full dashboard">
+                                <a href="/">
+                                <img src={logo} alt="cara"/>
+                                </a>
+                                <h1 className="text-gray-900 font-bold text-xl leading-8 my-1">{dato[0]?.username} {dato[0]?.lastname}</h1>
                                 <input type="text" className="text-gray-600 font-lg text-semibold leading-6 pb-4" id="job" placeholder={dato[0]?.job} onChange={e => setJob(e.target.value)} />
                                 <h3 className="text-gray-600 font-lg text-semibold text-sm leading-6">Email</h3>
                                 <input type="email" className="text-gray-600 font-lg text-semibold leading-6 pb-4 w-full" id="email" placeholder={dato[0]?.email} onChange={e => setEmail(e.target.value)} />
                                 <h3 className="text-gray-600 font-lg text-semibold text-sm leading-6">Phone</h3>
                                 <input type="number" className="text-gray-600 font-lg text-semibold leading-6 pb-4 w-full" id="number" placeholder={dato[0]?.phone} onChange={e => setPhone(e.target.value)} />
-                                <ul className="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded-xl shadow-sm">
+                                <ul className=" text-gray-900 mt-3">
                                     <li className="flex items-center py-3 font-bold">
                                         <span>Skills</span>
                                     </li>
@@ -135,7 +126,7 @@ function Admin({ setInfo }) {
                                         return <div key={recipe}>
                                             {recipe.knowledges.map((type, index) => {
                                                 return <span key={index}>
-                                                    <li className="flex items-center py-1">{type}</li>
+                                                    <li className="flex text-gray-500 items-center py-1 pl-6">{type}</li>
                                                 </span>
                                             })}
                                         </div>
@@ -146,10 +137,10 @@ function Admin({ setInfo }) {
                             <div className="my-4" />
                         </div>
                         {/* Right Side */}
-                        <div className="w-full md:w-9/12 mx-2 h-64">
+                        <div className="w-full md:w-9/12 flex flex-col justify-start p-10">
                             {/* Profile tab */}
                             {/* About Section */}
-                            <div className="bg-white p-3 shadow-sm rounded-xl">
+                            <div className="bg-[#f4f5fe] p-3 mb-16">
                                 <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
                                     <span clas="text-green-500">
                                         <svg className="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -158,11 +149,11 @@ function Admin({ setInfo }) {
                                     </span>
                                     <span className="tracking-wide">About me</span>
                                 </div>
-                                <div className="text-gray-700">
+                                <div className="text-gray-700 acerca">
                                     <textarea className="grid md:grid-cols-2 text px-4 py-2 w-1/2 resize-none h-20" placeholder={dato[0]?.aboutme} onChange={e => setAboutme(e.target.value)}>
                                     </textarea>
 
-                                    <div className="grid md:grid-cols-2 text-sm">
+                                    <div className="grid md:grid-cols-2 text-sm acerca">
                                         <div className="grid grid-cols-2">
                                             <div className="px-4 py-2 font-semibold">Name</div>
                                             <input className="px-4 py-2" placeholder={dato[0]?.username} onChange={e => setUserName(e.target.value)}></input>
@@ -179,10 +170,10 @@ function Admin({ setInfo }) {
                                 </div>
                             </div>
                             {/* End of about section */}
-                            <div className="my-4" />
+                            <div className="repos" />
                             {/* Experience and education */}
-                            <div className="bg-white p-3 shadow-sm rounded-xl">
-                                <div className="grid grid-cols-2">
+                            <div className="bg-[#f4f5fe] p-3 ">
+                                <div className="grid grid-cols-1 items-end">
                                     <div>
                                         <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
                                             <span clas="text-green-500">
@@ -192,11 +183,11 @@ function Admin({ setInfo }) {
                                             </span>
                                             <span className="tracking-wide">Projects</span>
                                         </div>
-                                        <ul className="list-inside space-y-2">
+                                        <ul className="proyectos-list grid grid-cols-3 gap-4">
                                             {data.map((item, index) => (
                                                 <li key={index}>
-                                                    <div className="text-teal-600">{item.name}</div>
-                                                    <div className="text-gray-500 text-xs">{item.description}</div>
+                                                    <div className="text-white font-bold text-lg">{item.name}</div>
+                                                    <div className="text-gray-100 text-xs">{item.description}</div>
                                                 </li>
                                             ))}
                                         </ul>
@@ -208,7 +199,11 @@ function Admin({ setInfo }) {
                         </div>
                     </div>
                 </div>
+                <button type="submit" className="boton-save bg-cyan-700 px-4 py-4 exit flex text-white focus:text-white flex-row rounded-full items-center space-x-2 w-full mt-2 text-sm font-semibold text-left hover:bg-cyan-900 md:w-auto md:mt-0 md:ml-4 focus:bg-[#000] focus:outline-none focus:shadow-outline">
+                    <img cl src={save} alt="guardar"/>
+                </button>
             </div>
+            
         </form>
     )
 }
