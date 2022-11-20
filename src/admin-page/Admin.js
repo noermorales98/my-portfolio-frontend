@@ -199,7 +199,7 @@ function Admin({ setInfo }) {
                         </div>
                     </div>
                 </div>
-                <button type="submit" className="boton-save bg-cyan-700 px-4 py-4 exit flex text-white focus:text-white flex-row rounded-full items-center space-x-2 w-full mt-2 text-sm font-semibold text-left hover:bg-cyan-900 md:w-auto md:mt-0 md:ml-4 focus:bg-[#000] focus:outline-none focus:shadow-outline">
+                <button type="submit" className="boton-save bg-gray-800 px-4 py-4 exit flex text-white focus:text-white flex-row rounded-full items-center space-x-2 w-full mt-2 text-sm font-semibold text-left hover:bg-black md:w-auto md:mt-0 md:ml-4 focus:bg-[#000] focus:outline-none focus:shadow-outline">
                     <img cl src={save} alt="guardar"/>
                 </button>
             </div>
