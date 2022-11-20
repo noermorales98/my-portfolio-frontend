@@ -34,7 +34,7 @@ function Header() {
           <a href="#home" className="nav__link">Inicio</a>
         </li>
         <li className="nav__item">
-          <a href="#portfolio" className="nav__link">Portfolio</a>
+          <a href="#portfolio" className="nav__link">Portafolio</a>
         </li>
         <li className="nav__item">
           <a href="#aboutme" className="nav__link">Acerca de</a>

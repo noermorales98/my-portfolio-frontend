@@ -1,6 +1,9 @@
 .Contact{
-    min-height: 80vh;
-    background: #112130;
+    min-height: 90vh;
+    background:#191919;
+    background-image: url('./contact.png');
+    background-size:100%;
+    background-repeat: no-repeat;
     color: white;
 }
 
@@ -8,4 +11,34 @@
     .contactos {
         width: 100%;
     }
+    .datos{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contactos div{
+        align-items: center;
+    }
 }
+
+.settings{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #242324;
+    padding: 1rem;
+    width: 3.5rem;
+    border-radius: 5rem;
+    box-shadow: 0px 5px 11px 0px #000000ab;
+}
+
+.settings:hover{
+    background: #e8532e;
+    width: 4rem;
+    transition: all 0.2s;
+}
+
+.boton-contacto a{
+    box-shadow: -1px 5px 6px 0px #0000007d;    
+}
+

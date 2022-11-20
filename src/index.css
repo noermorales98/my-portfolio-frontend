@@ -10,10 +10,9 @@ html {
 body {
   margin: 0;
   font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-  background: #f3f6fb;
-  color: #112130;
-  background-image: url("./components/home/gradient.png");
-  background-size: cover;
+  color: #191919;
+  background-image: url("./components/home/bg2.png");
+  background-size: 100% 100%;
 }
 
 code {
