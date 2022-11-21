@@ -35,7 +35,7 @@ function Portfolio() {
         <section className="Portfolio flex gap-3 max-w-full py-20" id="portfolio">
             <div className="my-portfolio flex items-center justify-center w-full">
                 <div className="titles gap-3 w-5/6 text-white">
-                    <h1 className=" text-5xl ">{data}</h1>
+                    <h1 className=" text-5xl ">Repositorios</h1>
 
                 </div>
                 <div className="projects px-10">
