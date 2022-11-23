@@ -10,7 +10,6 @@ function Contact() {
         fetch(`http://localhost:3001/info`)
             .then((response) => response.json())
             .then((actualDato) => {
-                console.log(actualDato);
                 setDato(actualDato);
             })
             .catch((err) => {
