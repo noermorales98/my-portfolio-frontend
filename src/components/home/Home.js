@@ -4,7 +4,7 @@ import noe from './profilenoe.jpg';
 import avatar from './avatarnoe.png';
 import objetos from './objects.png';
 // import obj from "./gradient-ob.png";
-
+import scrit from "./script.js";
 function Home() {
     const [data, setData] = React.useState([]);
     React.useEffect(() => {
@@ -14,6 +14,7 @@ function Home() {
     }, []);
     return (
         <section className="Home flex items-center overflow-x-hidden" id="home">
+            <script src={scrit}></script>
             <div className="left w-1/2 items-center">
                 <div className="dialog gap-1 text-6xl items-center flex whitespace-nowrap font-semibold">
                     <h1>Hola</h1>
@@ -30,9 +31,9 @@ function Home() {
                 </div>
             </div>
             <div className="right w-1/2 items-center flex justify-center">
-                <div className="avatar">
+                <div className="avatar move" value="-5">
                     <div className="first-avatar flex justify-center">
-                        <img className="h-full object-cover	z-10" src={avatar} alt="avatar" />
+                        <img className="h-full object-cover	z-10 move" value="3" src={avatar} alt="avatar" />
                         <img id="img-objects" className="h-full object-cover absolute overflow-x-hidden" src={objetos} alt="objetos" />
                     </div>
                 </div>
