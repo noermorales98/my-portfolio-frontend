@@ -11,8 +11,14 @@ body {
   margin: 0;
   font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
   color: #191919;
-  background-image: url("./components/home/bg2.png");
+  background-image: url("./components/home/bg.png");
   background-size: 100% 100%;
+}
+
+@media (min-width: 1028px) {
+  body{
+    height: 103vh;
+  }
 }
 
 code {
@@ -35,6 +41,6 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #112130;    /* color of the scroll thumb */
+  background-color: #e8532e;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */ /* creates padding around scroll thumb */
 }

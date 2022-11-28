@@ -5,6 +5,12 @@ function parallax(event) {
         const x = (window.innerWidth - event.pageX * position) / 90;
         const y = (window.innerHeight - event.pageY * position) / 90;
 
-        shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        console.log(x, y);
+        if(y>= -11){
+            shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        }
+        else{
+            shift.style.transform = `translateX(${x}px) translateY(-11px)`;
+        }
     })
 }
